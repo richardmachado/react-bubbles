@@ -2,6 +2,15 @@ import React from "react";
 import {useForm} from "react-hook-form";
 import axiosWithAuth from "../auth/axiosWithAuth.js";
 
+import styled from 'styled-components'
+
+const Formon  = styled.form`
+justify-self: center;
+margin-left: 10px
+`
+
+
+
 const AddColor = () => {
   const { register, handleSubmit} = useForm();
 
@@ -24,7 +33,7 @@ const AddColor = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <Formon onSubmit={handleSubmit(onSubmit)}>
         <legend>add color</legend>
         <label>
           color name:
@@ -39,7 +48,7 @@ const AddColor = () => {
         <br />
 
         <input type="submit" value="add" />
-      </form>
+      </Formon>
     </>
   );
 };

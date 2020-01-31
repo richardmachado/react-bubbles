@@ -10,7 +10,7 @@ const Login = (props) => {
       .post("/login", data)
       .then((res) => {
         localStorage.setItem("token", res.data.payload);
-        props.history.push("/dash");
+        props.history.push("/bubbles");
       })
       .catch((err) => console.log("Error: ", err));
   };
@@ -27,7 +27,7 @@ const Login = (props) => {
 
         <label>
           Password:
-          <input type="password" name="password" ref={register} />
+          <input type="text" name="password" ref={register} />
         </label>
         <br />
 
